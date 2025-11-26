@@ -36,6 +36,9 @@
                         <a href="#" class="nav__link">Contact</a>
                     </li>
                 </ul>
+                <button class="btn__menu" onclick="openMenu()">
+                  <i class="fas fa-bars"></i>
+                </button>
             </div>
         </nav>
         <header>
@@ -43,8 +46,12 @@
                 <div class="header__description">
                     <h1>The Open Movie Database</h1>
                     <h2>The OMDb API is a RESTful web service to obtain movie information, all content and images on the site are contributed and maintained by our users.</h2>
-                    <input type="text" placeholder="Search by Title, Year, or Keyword"></input>
-                    <button class="not-loading"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div class="container">
+                      <div class="row">
+                        <input type="text" placeholder="Search by Title, Year, or Keyword" id="search option"></input>
+                        <button class="not-loading"><i class="fa-solid fa-magnifying-glass"></i></button>
+                      </div>
+                    </div>
                 </div>
                 <figure class="header__img--wrapper">
                     <img src="./aseets/poster.jpg" alt="movie-poster">
