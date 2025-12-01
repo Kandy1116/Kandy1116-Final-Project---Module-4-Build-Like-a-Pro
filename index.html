@@ -1,68 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KL -Final-Project-Module-4-Build-Like-a-Pro</title>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/9d8d894522.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script src="index.js" defer></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("user_KJXHaU6B8Zzu04vLT");
-      })();
-    </script>
-  </head>
-  <body>
-    <section id="landing">
-        <nav>
-            <div class="nav__container">
-                <header class="nav__logo">OMDb API</header>
-                <ul class="nav__links">
-                    <li>
-                        <a href="#" class="nav__link">Home</a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav__link">Search for Film</a>
-                    </li>
-                    <a class="btn-contact">Contact</a>
-                </ul>
-                <button class="btn__menu" onclick="openMenu()">
-                  <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </nav>
-        <header>
-            <div class="header__container">
-                <div class="header__description">
-                    <h1>The Open Movie Database</h1>
-                    <h2>The OMDb API is a RESTful web service to obtain movie information, all content and images on the site are contributed and maintained by our users.</h2>
-                    <div class="container">
-                      <div class="input-wrapper">
-                        <input type="text" placeholder="Search by Title, Year, or Keyword" id="search option"></input>
-                        <button class="not-loading"><i class="fa-solid fa-magnifying-glass"></i></button>
-                      </div>
-                    </div>
-                </div>
-                <div class="row">
-                  <figure class="header__img--wrapper"> 
-                    <img src="./aseets/poster.jpg" id="movie-poster">
-                  </figure>
-                  <div class="API__description">
-                    <div class="section__tag">Poster API</div>
-                    <h2 class="section__title">The Poster API is only available to patrons.</h2>
-                    <p class="section__para">Currently over 280,000 posters, updated daily with resolutions up to 2000x3000.</p>
-                  </div>
-                </div>
-            </div>
-        </header>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kandy1116-Final-Project---Module-4-Build-Like-a-Pro</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/9d8d894522.js" crossorigin="anonymous"></script>
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">Movie Search</h1>
+      <div class="search-group">
+        <input id="searchInput" type="search" placeholder="Search movies, actors, keywords..." aria-label="Search movies" />
+        <button id="clearBtn" title="Clear">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <button id="filterToggle" class="filter-toggle" aria-expanded="false" aria-controls="filterPanel">Filters ▾</button>
+      <div id="filterPanel" class="filter-panel" aria-hidden="true">
+        <div class="filters">
+          <label class="filter-item">Sort
+            <select id="sortSelect">
+              <option value="title-asc">Title A–Z</option>
+              <option value="title-desc">Title Z–A</option>
+            </select>
+          </label>
+
+          <label class="filter-item">Year: from
+            <input id="yearFrom" type="number" min="1800" max="2100" placeholder="e.g. 1990" />
+          </label>
+          <label class="filter-item">to
+            <input id="yearTo" type="number" min="1800" max="2100" placeholder="e.g. 2025" />
+          </label>
+
+          <label class="filter-item">Min rating
+            <select id="minRating">
+              <option value="0">Any</option>
+              <option value="9">9+</option>
+              <option value="8">8+</option>
+              <option value="7">7+</option>
+              <option value="6">6+</option>
+              <option value="5">5+</option>
+            </select>
+          </label>
+
+          <div class="filter-actions">
+            <button id="applyFilters">Apply</button>
+            <button id="clearFilters">Clear</button>
+          </div>
+        </div>
+      </div>
     </section>
-  </body>
+
+    <section id="results" class="results-grid" aria-live="polite"></section>
+
+    <div id="loading" class="loading" hidden>Loading…</div>
+
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <dialog class="modal-dialog" id="modalDialog">
+        <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+        <div id="modalContent"></div>
+      </dialog>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">2025 &copy;</div>
+  </footer>
+
+</body>
 </html>
