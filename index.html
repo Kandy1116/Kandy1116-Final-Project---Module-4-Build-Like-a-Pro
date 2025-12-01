@@ -32,9 +32,7 @@
                     <li>
                         <a href="#" class="nav__link">Search for Film</a>
                     </li>
-                    <li>
-                        <a href="#" class="nav__link">Contact</a>
-                    </li>
+                    <a class="btn-contact">Contact</a>
                 </ul>
                 <button class="btn__menu" onclick="openMenu()">
                   <i class="fas fa-bars"></i>
@@ -47,15 +45,22 @@
                     <h1>The Open Movie Database</h1>
                     <h2>The OMDb API is a RESTful web service to obtain movie information, all content and images on the site are contributed and maintained by our users.</h2>
                     <div class="container">
-                      <div class="row">
+                      <div class="input-wrapper">
                         <input type="text" placeholder="Search by Title, Year, or Keyword" id="search option"></input>
                         <button class="not-loading"><i class="fa-solid fa-magnifying-glass"></i></button>
                       </div>
                     </div>
                 </div>
-                <figure class="header__img--wrapper">
-                    <img src="./aseets/poster.jpg" alt="movie-poster">
-                </figure>
+                <div class="row">
+                  <figure class="header__img--wrapper"> 
+                    <img src="./aseets/poster.jpg" id="movie-poster">
+                  </figure>
+                  <div class="API__description">
+                    <div class="section__tag">Poster API</div>
+                    <h2 class="section__title">The Poster API is only available to patrons.</h2>
+                    <p class="section__para">Currently over 280,000 posters, updated daily with resolutions up to 2000x3000.</p>
+                  </div>
+                </div>
             </div>
         </header>
     </section>
